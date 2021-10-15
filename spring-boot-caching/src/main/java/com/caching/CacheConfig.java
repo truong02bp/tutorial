@@ -18,10 +18,8 @@ public class CacheConfig {
     private static final Logger LOGGER = LoggerFactory.getLogger(CacheConfig.class);
 
     @Scheduled(fixedRate = Timer.ONE_MINUTE)
-    @CacheEvict(
-            value = {CHANNELS_CACHE},
-            allEntries = true)
-    public void clearEvents() {
-        LOGGER.info("Clearing events caches");
+    @CacheEvict(value = {CHANNELS_CACHE}, allEntries = true)
+    public void clearChannels() {
+        LOGGER.info("Clearing channels caches");
     }
 }

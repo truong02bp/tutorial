@@ -11,7 +11,7 @@ public class ChannelService {
     @Autowired
     private ChannelRepository channelRepository;
 
-    @Cacheable(value = CacheConfig.CHANNELS_CACHE)
+    @Cacheable(value = "channels")
     public List<Channel> findAll() {
         System.out.println("Fetching from database");
         return channelRepository.findAll();
