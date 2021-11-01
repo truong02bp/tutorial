@@ -1,6 +1,6 @@
-package com.multi_thread_async.repository;
+package com.user.data.repositories;
 
-import com.multi_thread_async.entities.User;
+import com.user.data.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long> {

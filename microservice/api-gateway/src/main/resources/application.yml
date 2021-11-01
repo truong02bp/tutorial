@@ -1,0 +1,49 @@
+server:
+  port: 9191
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      httpclient:
+        # global timeout
+        connect-timeout: 1000
+        response-timeout: 5s
+      routes:
+        - id: USER-SERVICE
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path= /users/**
+          metadata:
+            response-timeout: 200
+            connect-timeout: 200
+        - id: IMAGE-SERVICE
+          uri: lb://IMAGE-SERVICE
+          predicates:
+            - Path= /images/**
+          metadata:
+            response-timeout: 5000
+            connect-timeout: 5000
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url: { default-zone: "http://localhost:8761/eureka/" }
+  instance:
+    hostname: localhost
+
+management:
+  endpoint:
+    info:
+      enabled: true
+    health:
+      show-details: always
+
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+info:
+  app:
+    name: API-GATEWAY

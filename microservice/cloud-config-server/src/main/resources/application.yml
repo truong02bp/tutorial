@@ -1,0 +1,13 @@
+server:
+  port: 9296
+
+spring:
+  application:
+    name: CONFIG-SERVER
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/truong02bp/config-server/blob/main/application.yml
+          clone-on-start: true
+          private-key: 6uZuJyeZB48VRGsYQba56UI9JqVL9aSakEq4s/MOKRc

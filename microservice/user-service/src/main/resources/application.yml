@@ -1,0 +1,25 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: USER-SERVICE
+  datasource:
+    url: jdbc:mysql://localhost:3306/big_data
+    username: root
+    password: comebackt0me.
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url: {default-zone : "http://localhost:8761/eureka/"}
+  instance:
+    hostname: localhost
+
+host:
+  image:
+    service: IMAGE-SERVICE
