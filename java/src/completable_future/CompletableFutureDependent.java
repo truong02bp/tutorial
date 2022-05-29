@@ -37,13 +37,9 @@ class CreditService {
 
 class ApiUtils {
     public static CompletableFuture<User> getUser() {
-        return CompletableFuture.supplyAsync(() -> {
-            return UserService.getUser(5);
-        });
+        return CompletableFuture.supplyAsync(() -> UserService.getUser(5));
     }
     public static CompletableFuture<Integer> getCreditByUser(User user) {
-        return CompletableFuture.supplyAsync(() -> {
-           return CreditService.getByUser(user);
-        });
+        return CompletableFuture.supplyAsync(() -> CreditService.getByUser(user));
     }
 }

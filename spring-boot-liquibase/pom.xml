@@ -77,7 +77,6 @@
                 <artifactId>liquibase-maven-plugin</artifactId>
                 <configuration>
                     <propertyFile>liquibase.properties</propertyFile>
-
                 </configuration>
             </plugin>
         </plugins>

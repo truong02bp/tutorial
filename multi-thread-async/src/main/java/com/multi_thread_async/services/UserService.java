@@ -45,13 +45,16 @@ public class UserService {
         return users;
     }
 
-    @Async
     public List<User> getUserAsync() throws ExecutionException, InterruptedException {
         long start = System.currentTimeMillis();
-        CompletableFuture<List<User>> users = CompletableFuture.completedFuture(userRepository.findAll());
+        List<User> users = new ArrayList<>();
+        CompletableFuture<List<User>> find1 = CompletableFuture.supplyAsync(() -> userRepository.findByCompareId((long) 15000));
+        CompletableFuture<List<User>> find3 = CompletableFuture.supplyAsync(() -> userRepository.findByCompareId((long) 30000));
+        users.addAll(find1.get());
+        users.addAll(find3.get());
         long end = System.currentTimeMillis();
         System.out.println(end - start);
-        return users.get();
+        return users;
     }
 
 }

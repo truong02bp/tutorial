@@ -29,7 +29,7 @@ public class CompletableFutureCombine {
 
     private static Integer sum(int a, int b) {
         try {
-            Thread.sleep(500);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -38,7 +38,7 @@ public class CompletableFutureCombine {
 
     private static Integer mul(int a, int b) {
         try {
-            Thread.sleep(1000);
+            Thread.sleep(10000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

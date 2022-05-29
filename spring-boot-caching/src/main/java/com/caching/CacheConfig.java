@@ -14,7 +14,7 @@ import javax.management.timer.Timer;
 @EnableCaching
 @EnableScheduling
 public class CacheConfig {
-    public static final String CHANNELS_CACHE = "Channels";
+    public static final String CHANNELS_CACHE = "offers";
     private static final Logger LOGGER = LoggerFactory.getLogger(CacheConfig.class);
 
     @Scheduled(fixedRate = Timer.ONE_MINUTE)
